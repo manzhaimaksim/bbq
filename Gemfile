@@ -7,6 +7,7 @@ gem 'bootsnap'
 gem 'jquery-rails'
 gem 'listen'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'twitter-bootstrap-rails'
 gem 'uglifier'
 
 group :development, :test do

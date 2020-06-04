@@ -5,8 +5,10 @@ ruby '2.6.5'
 
 gem 'bootsnap'
 gem 'jquery-rails'
+gem 'less-rails'
 gem 'listen'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
+gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier'
 

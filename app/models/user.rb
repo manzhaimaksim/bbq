@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
-  EMAIL_REGEXP = /\A.+@.+\z/
+  before_validation :set_name, on: :create
 
   # Юзер может создавать много событий
   has_many :events
@@ -13,10 +13,9 @@ class User < ApplicationRecord
   validates :name,  presence: true,
                     length: { maximum: 35 }
 
-  # Уникальный email по заданному шаблону не более 255
-  # символов
-  validates :email, presence: true,
-                    length: { maximum: 255 },
-                    uniqueness: true,
-                    format: EMAIL_REGEXP
+  private
+
+  def set_name
+    self.name = "User ##{rand(1000)}" if self.name.blank?
+  end
 end

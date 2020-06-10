@@ -7,10 +7,16 @@ class ApplicationController < ActionController::Base
     user_signed_in? && event.user == current_user
   end
 
+  protected
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
-        :account_update,
-        keys: [:password, :password_confirmation, :current_password]
+      :sign_up,
+      keys: %i[name email password]
+    )
+    devise_parameter_sanitizer.permit(
+      :account_update,
+      keys: %i[name email password current_password]
     )
   end
 end

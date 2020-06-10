@@ -1,33 +1,42 @@
-<h2>Sign up</h2>
+<div class="col-sm-12">
+  <h2 class="text-center m-4">Sign up</h2>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "name" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+      <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-2 control-label"  %><br />
+    <div class="col-sm-6">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit "Sign up", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
 

@@ -1,1 +1,45 @@
 en:
+  main_title: 'BBQ!'
+  erorrs:
+    one: "%{count} error"
+    many: "%{count} errors"
+  events:
+    form:
+      title: 'Title'
+      address: 'Address'
+      datetime: 'Datetime'
+      description: 'Description'
+    create:
+      success: 'Event was successfully created'
+    update:
+      success: 'Event was successfully updated'
+    destroy:
+      success: 'Event was successfully destroyed'
+    show:
+      confirm_destroy: 'Are you sure?'
+  devise:
+    sessions:
+      new:
+        email: 'Email'
+        password: 'Password'
+        remember_me: 'Remember me'
+        log_in: 'Login'
+    shared:
+      links:
+        sign_up: 'Sign up'
+        forgot_your_password: 'Forgot your password?'
+        log_in: 'Log in'
+    registrations:
+      new:
+        sign_up_title: 'Sign up'
+        email: 'Email'
+        name: 'Name'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        sign_up_button: 'Sign up'
+  users:
+    form:
+      name: 'Name'
+      email: 'Email'
+    update:
+      success: 'User was successfully updated'

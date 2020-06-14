@@ -1,5 +1,46 @@
 ru:
+  main_title: 'ШАШЛЫКИ!'
   erorrs:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
+  events:
+    form:
+      title: 'Название'
+      address: 'Место проведения'
+      datetime: 'Время начала'
+      description: 'Описание'
+    create:
+      success: 'Событие успешно создано'
+    update:
+      success: 'Событие успешно обновлено'
+    destroy:
+      success: 'Событие успешно удалено'
+    show:
+      confirm_destroy: 'Точно хотите удалить?'
+  devise:
+    sessions:
+      new:
+        email: 'Email'
+        password: 'Пароль'
+        remember_me: 'Запомнить меня'
+        log_in: 'Войти'
+    shared:
+      links:
+        sign_up: 'Зарегистрироваться'
+        forgot_your_password: 'Забыли свой пароль?'
+        log_in: 'Войти'
+    registrations:
+      new:
+        sign_up_title: 'Регистрация'
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        sign_up_button: 'Зарегистрироваться'
+  users:
+    form:
+      name: 'Имя'
+      email: 'Email'
+    update:
+      success: 'Данные успешно обновлены'

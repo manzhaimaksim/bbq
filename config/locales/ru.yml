@@ -1,0 +1,5 @@
+ru:
+  erorrs:
+    one: "%{count} ошибка"
+    few: "%{count} ошибки"
+    many: "%{count} ошибок"

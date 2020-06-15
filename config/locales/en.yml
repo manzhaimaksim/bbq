@@ -17,6 +17,8 @@ en:
       success: 'Event was successfully destroyed'
     show:
       confirm_destroy: 'Are you sure?'
+      change_event: 'Change'
+      destroy_event: 'Destroy'
   devise:
     sessions:
       new:

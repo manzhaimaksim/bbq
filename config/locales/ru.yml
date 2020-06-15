@@ -18,6 +18,8 @@ ru:
       success: 'Событие успешно удалено'
     show:
       confirm_destroy: 'Точно хотите удалить?'
+      change_event: 'Изменить'
+      destroy_event: 'Удалить'
   devise:
     sessions:
       new:

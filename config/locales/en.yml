@@ -45,3 +45,8 @@ en:
       email: 'Email'
     update:
       success: 'User was successfully updated'
+  controllers:
+    comments:
+      created: 'Your comment has been added.'
+      destroyed: 'Comment has been deleted'
+      error: 'Comment error'

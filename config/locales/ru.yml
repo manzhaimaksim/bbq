@@ -46,3 +46,8 @@ ru:
       email: 'Email'
     update:
       success: 'Данные успешно обновлены'
+  controllers:
+    comments:
+      created: 'Ваш комментарий добавлен'
+      destroyed: 'Комментарий удален'
+      error: 'Ошибка с комментарием'

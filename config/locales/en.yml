@@ -56,3 +56,5 @@ en:
       created: 'You are subscribed to this event'
       destroyed: 'Member unsubscribed'
       error: 'Subscription / unsubscription did not work'
+      subscription:
+        destroy_confirm: 'Are you sure you want to delete this subscription?'

@@ -57,5 +57,6 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
-      subscription:
+  subscriptions:
+     subscription:
         destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'

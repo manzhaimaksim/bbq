@@ -56,6 +56,7 @@ en:
       created: 'You are subscribed to this event'
       destroyed: 'Member unsubscribed'
       error: 'Subscription / unsubscription did not work'
+      owner_message: 'You cannot subscribe to this event because you are the organizer'
   subscriptions:
     subscription:
       destroy_confirm: 'Are you sure you want to delete this subscription?'

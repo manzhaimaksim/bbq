@@ -2,6 +2,8 @@ class Subscription < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :event
 
+  validate :user_owner
+
   validates :user_name, presence: true, unless: -> { user.present? }
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
 
@@ -25,5 +27,9 @@ class Subscription < ApplicationRecord
     else
       super
     end
+  end
+
+  def user_owner
+    errors.add(user.name, I18n.t('.owner_message')) if user == event.user
   end
 end

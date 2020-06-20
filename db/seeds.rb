@@ -1,6 +1,7 @@
 Event.destroy_all
 User.destroy_all
 Comment.destroy_all
+Subscription.destroy_all
 
 user_1 = User.create!(name: 'Mike', email: 'mmm@mm.mm', password: '123456')
 user_2 = User.create!(name: 'Vadim', email: 'vvv@vv.vv', password: '123456')

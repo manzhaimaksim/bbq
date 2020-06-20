@@ -35,6 +35,6 @@ class Subscription < ApplicationRecord
   end
 
   def user_email_owner
-    errors.add(:user, I18n.t('.owner_email_message')) if User.select(:email).include?(user_email)
+    errors.add(:user, I18n.t('.owner_email_message')) if User.find_by_email(user_email)
   end
 end

@@ -1,5 +1,5 @@
 module SubscriptionsHelper
-  def user_owner?(event, user)
-    event.user == user
+  def current_user_is_owner?(event)
+    event.user == current_user
   end
 end

@@ -60,5 +60,12 @@ ru:
   subscriptions:
      subscription:
         destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-  owner_message: 'не может подписаться на свое событие'
-  owner_email_message: "нельзя использовать email зарегистрированного пользователя"
+  activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_name:
+              user_owner_event: 'Вы не можете подписаться, если вы организатор события'
+            user_email:
+              user_owner_email: 'Вы не можете использовать email зарегистрованого пользователя'

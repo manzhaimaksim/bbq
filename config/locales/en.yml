@@ -60,5 +60,12 @@ en:
   subscriptions:
     subscription:
       destroy_confirm: 'Are you sure you want to delete this subscription?'
-  owner_message: 'cannot subscribe to his event'
-  owner_email_message: "cannot use registered user email"
+  activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_name:
+              user_owner_event: 'You cannot subscribe if you are an event organizer'
+            user_email:
+              user_owner_email: 'You cannot use the email of a registered user'

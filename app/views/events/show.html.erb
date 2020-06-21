@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <% unless user_owner?(@event, current_user) %>
+      <% unless current_user_is_owner?(@event) %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

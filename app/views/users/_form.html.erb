@@ -7,11 +7,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label t('.email') %>
     <%= f.text_field :email, class: 'form-control' %>
   </div>
 
-  <div class="actions">
+  <div class="form-group">
+    <%= f.label t('.avatar') %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions form-group">
     <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
     или <%= link_to 'вернуться', :back %>
   </div>

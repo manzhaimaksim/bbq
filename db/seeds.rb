@@ -16,5 +16,5 @@ comment_3 = event_2.comments.create!(body: 'Скорей бы уже всех в
 comment_4 = event_2.comments.create!(body: 'А как туда доехать?', user_name: 'Максим')
 comment_4 = event_2.comments.create!(body: 'Я опоздаю, сорян)', user_name: 'Иван')
 
-subscription_1 = user_1.subscriptions.create!(event_id: 2)
-subscription_2 = user_2.subscriptions.create!(event_id: 1)
+subscription_1 = user_1.subscriptions.create!(event_id: event_2.id)
+subscription_2 = user_2.subscriptions.create!(event_id: event_1.id)

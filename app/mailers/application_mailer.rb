@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply@barbie-queue.herokuapp.com'
+  default from: 'testing.goodp@gmail.com'
   layout 'mailer'
 end

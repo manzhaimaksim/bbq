@@ -63,6 +63,8 @@ en:
       error: 'Something is wrong with the photo.'
       created: 'You added a photo to the event.'
       destroyed: 'You have deleted the photo'
+    events:
+      wrong_pincode: "Wrong pincode"
   subscriptions:
     subscription:
       destroy_confirm: 'Are you sure you want to delete this subscription?'
@@ -95,3 +97,5 @@ en:
       event: 'Event'
       datetime: 'Datetime'
       owner: 'Owner'
+  event:
+    pincode: "Pincode for access"

@@ -17,6 +17,10 @@ gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier'
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sass-rails'
+gem 'coffee-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4'

@@ -16,6 +16,7 @@ gem 'rmagick'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier'
+gem 'webpacker', github: 'rails/webpacker'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sass-rails'

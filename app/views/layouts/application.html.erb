@@ -10,7 +10,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= ENV['YANDEX_MAP_API_KEY'] %>" type="text/javascript"></script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag "application" %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>

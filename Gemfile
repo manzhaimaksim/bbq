@@ -4,17 +4,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'bootsnap'
+gem 'bootstrap'
 gem 'carrierwave'
 gem 'devise'
 gem 'fog-aws'
-gem 'jquery-rails'
 gem 'less-rails'
 gem 'listen'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 gem 'rails-i18n'
 gem 'rmagick'
 gem 'therubyracer'
-gem 'twitter-bootstrap-rails'
 gem 'uglifier'
 gem 'webpacker', github: 'rails/webpacker'
 

@@ -1,6 +1,9 @@
-/*
-  *= require bootstrap_and_overrides
- */
+@import "bootstrap_custom"; //bootstrap custom variables put here
+@import "bootstrap";
+@import "styles"; // self-define class and styles put here
+@import "bootstrap_and_overrides";
+@import "events";
+@import "users";
 
 /* Buffers */
 .buffer-top {

@@ -99,3 +99,6 @@ en:
       owner: 'Owner'
   event:
     pincode: "Pincode for access"
+  layouts:
+    application:
+      menu: "Menu"

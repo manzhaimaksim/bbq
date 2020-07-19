@@ -20,13 +20,9 @@
   <body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to t(:main_title), root_path, class: 'a navbar-brand' %>
+        <button type="button" class="navbar-toggle btn btn-light" data-toggle="collapse" data-target=".navbar-responsive-collapse"><%= t('.menu') %></button>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <%= link_to t(:main_title), root_path, class: 'a navbar-brand' %>
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
               <li><%= link_to 'Профиль', current_user %></li>

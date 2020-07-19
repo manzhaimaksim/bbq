@@ -99,3 +99,6 @@ ru:
       owner: 'Организатор'
   event:
     pincode: "Пинкод доступа"
+  layouts:
+    application:
+      menu: "Меню"

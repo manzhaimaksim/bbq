@@ -40,4 +40,9 @@
 yarn-debug.log*
 .yarn-integrity
 
+/public/uploads
+
+config/database.yml
+config/secrets.yml
+
 /public/*

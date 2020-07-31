@@ -40,4 +40,6 @@
 yarn-debug.log*
 .yarn-integrity
 
-/public/*
+.env
+/config/application.yml
+/config/application.yml.example

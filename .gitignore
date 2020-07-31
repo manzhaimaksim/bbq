@@ -40,6 +40,11 @@
 yarn-debug.log*
 .yarn-integrity
 
+/public/uploads
+
 .env
+
+# Ignore application configuration
 /config/application.yml
-/config/application.yml.example
+config/database.yml
+config/secrets.yml

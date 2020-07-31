@@ -94,14 +94,12 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    dotenv (2.7.6)
-    dotenv-rails (2.7.6)
-      dotenv (= 2.7.6)
-      railties (>= 3.2)
     erubi (1.9.0)
     excon (0.75.0)
     execjs (2.7.0)
     ffi (1.13.1)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     fog-aws (3.6.6)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -244,7 +242,7 @@ DEPENDENCIES
   byebug
   carrierwave
   devise
-  dotenv-rails
+  figaro
   fog-aws
   listen
   pg

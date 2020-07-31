@@ -47,3 +47,6 @@ config/secrets.yml
 
 /public/*
 .env
+
+# Ignore application configuration
+/config/application.yml

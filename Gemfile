@@ -7,7 +7,7 @@ gem 'bootsnap'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'devise'
-gem 'dotenv-rails'
+gem "figaro"
 gem 'fog-aws'
 gem 'listen'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'

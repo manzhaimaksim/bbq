@@ -7,6 +7,7 @@ gem 'bootsnap'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'fog-aws'
 gem 'listen'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
@@ -18,7 +19,6 @@ gem 'webpacker', github: 'rails/webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails'
   gem 'sqlite3', '~> 1.4'
 end
 

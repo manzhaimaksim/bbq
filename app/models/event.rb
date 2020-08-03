@@ -12,11 +12,17 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
 
+  validate :datetime_is_future?
+
   def visitors
     (subscribers + [user]).uniq
   end
 
   def pincode_valid?(pin2chek)
     pincode == pin2chek
+  end
+
+  def datetime_is_future?
+    errors.add(:datetime, "Событие должно пройти в будущем") if datetime < Time.now
   end
 end

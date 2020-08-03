@@ -68,7 +68,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.8.6)
+    autoprefixer-rails (9.8.6.1)
       execjs
     bcrypt (3.1.15)
     bootsnap (1.4.7)
@@ -94,6 +94,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
     erubi (1.9.0)
     excon (0.76.0)
     execjs (2.7.0)
@@ -242,6 +245,8 @@ DEPENDENCIES
   byebug
   carrierwave
   devise
+  devise-bootstrap-views
+  devise-i18n
   figaro
   fog-aws
   listen

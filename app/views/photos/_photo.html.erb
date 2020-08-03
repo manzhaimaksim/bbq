@@ -1,5 +1,9 @@
-<div class="event-photo buffer-both">
-  <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-  toggle: 'lightbox', title: image_title, gallery: 'event-photos'} %>
+<div class="event-photo buffer-both d-flex flex-row justify-content-around align-items-center">
+  <div>
+    <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
+    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {toggle: 'lightbox', title: image_title, gallery: 'event-photos'} %>
+  </div>
+  <div>
+    <%= button_to "Delete photo", event_photo_path(photo.event, photo), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  </div>
 </div>

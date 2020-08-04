@@ -15,6 +15,13 @@ require("channels")
 require("bootstrap")
 require("popper.js")
 
+import '@fortawesome/fontawesome-free/scss/fontawesome';
+import '@fortawesome/fontawesome-free/scss/solid';
+import '@fortawesome/fontawesome-free/scss/regular';
+import '@fortawesome/fontawesome-free/scss/brands';
+import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+import "@fortawesome/fontawesome-free/js/all";
 import './gallery'
 
 // Uncomment to copy all static images under ../images to the output folder and reference

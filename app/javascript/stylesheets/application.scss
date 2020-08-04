@@ -3,6 +3,8 @@
 @import "events";
 @import "users";
 
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+
 /* Buffers */
 .buffer-top {
   margin-top: 20px;

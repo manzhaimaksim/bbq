@@ -1,10 +1,9 @@
-<div class="event-photo buffer-both d-flex flex-row justify-content-around align-items-center">
+<div class='event-photo buffer-both d-flex flex-row justify-content-around align-items-center'>
   <div>
-    <% image_title = "Добавил #{render partial: 'users/user', object: photo.user}" %>
-    <% image_title += link_to fa_icon("trash"), event_photo_path(photo.event, photo), method: :delete, data: {confirm: 'just trash?'} %>
-    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {toggle: 'lightbox', title: image_title, gallery: 'event-photos'} %>
-  </div>
-  <div>
-    <%= button_to "Delete photo", event_photo_path(photo.event, photo), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <% image_title = "#{ t('.added') } #{ render partial: 'users/user', object: photo.user } "%>
+    <% if current_user_can_edit?(photo) %>
+      <% image_title << "#{ link_to fa_icon('trash'), event_photo_path(photo.event, photo), method: :delete, data: { confirm: t('.destroy_confirm') } }" %>
+    <% end %>
+    <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: { toggle: 'lightbox', title: image_title, gallery: 'event-photos' } %>
   </div>
 </div>

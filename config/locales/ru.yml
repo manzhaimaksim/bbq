@@ -102,3 +102,8 @@ ru:
   layouts:
     application:
       menu: "Меню"
+  photos:
+    photo:
+      destroy_confirm: "Вы действительно желаете удалить фото?"
+      added: "Добавил"
+      delete_photo: "Удалить фото"

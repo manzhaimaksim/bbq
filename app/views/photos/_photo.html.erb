@@ -1,6 +1,6 @@
 <div class='event-photo buffer-both d-flex flex-row justify-content-around align-items-center'>
   <div>
-    <% image_title = "#{ t('.added') } #{ render partial: 'users/user', object: photo.user } "%>
+    <% image_title = "#{ t('.added') } #{ render partial: 'users/user', object: photo.user }" %>
     <% if current_user_can_edit?(photo) %>
       <% image_title << "#{ link_to fa_icon('trash'), event_photo_path(photo.event, photo), method: :delete, data: { confirm: t('.destroy_confirm') } }" %>
     <% end %>

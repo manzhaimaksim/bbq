@@ -10,9 +10,8 @@ class Event < ApplicationRecord
                     length: { maximum: 255 }
 
   validates :address, presence: true
-  validates :datetime, presence: true
-
-  validate :datetime_is_future?
+  validates :datetime,  presence: true,
+                        inclusion: { in: (Time.now + 1.hour).., message: I18n.t('datetime_validation') }
 
   def visitors
     (subscribers + [user]).uniq
@@ -20,9 +19,5 @@ class Event < ApplicationRecord
 
   def pincode_valid?(pin2chek)
     pincode == pin2chek
-  end
-
-  def datetime_is_future?
-    errors.add(:datetime, "Событие должно пройти в будущем") if datetime < Time.now
   end
 end

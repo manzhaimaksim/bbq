@@ -14,6 +14,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
 require("popper.js")
+require("air-datepicker")
 
 import '@fortawesome/fontawesome-free/scss/fontawesome';
 import '@fortawesome/fontawesome-free/scss/solid';
@@ -23,7 +24,7 @@ import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 import "@fortawesome/fontawesome-free/js/all";
 import './gallery'
-import './datepicker.min'
+// import './datepicker.min'
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

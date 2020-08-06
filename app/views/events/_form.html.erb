@@ -8,6 +8,16 @@
     <%= f.label :address %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
+
+<!--  <script type="text/javascript">-->
+<!--    $('#my-element').datepicker([options])-->
+
+<!--    // Доступ к экземпляру объекта-->
+<!--    $('#my-element').data('datepicker')-->
+<!--  </script>-->
+
+<!--  <input id="my-element" type='text' class='datepicker-here' />-->
+
   <div class="form-group">
     <%= f.label :datetime %>
     <p><%= f.datetime_select :datetime, default: 61.minutes.from_now, class: 'form-control' %></p>

@@ -22,4 +22,7 @@ class EventMailer < ApplicationMailer
 
     mail to: email, subject: "Новое фото в #{event.title}"
   end
+
+  def reset_password_instructions
+  end
 end

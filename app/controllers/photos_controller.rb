@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 
     if @new_photo.save
       # уведомляем всех подписчиков о новой фотографии
-      # notify_subscribers(@event, @new_photo)
+      notify_subscribers(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else

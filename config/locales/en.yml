@@ -97,6 +97,13 @@ en:
       event: 'Event'
       datetime: 'Datetime'
       owner: 'Owner'
+    photo:
+      title: "New photo"
+      author: "Author"
+      event: "Event"
+      datetime: "Datetime"
+      owner: "Owner"
+      photo: "Photo"
   event:
     pincode: "Pincode for access"
   layouts:

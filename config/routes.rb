@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update]
+  match 'users/unsubscribe/:unsubscribe_hash' => 'users#unsubscribe', as: 'unsubscribe', via: :all
 end

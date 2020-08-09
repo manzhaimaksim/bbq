@@ -9,3 +9,5 @@
 <%= t '.event' %>: <%= @event.title %>
 <%= t '.datetime' %>: <%= l @event.datetime %>
 <%= t '.owner' %>: <%= @event.user.name %>
+
+<%= link_to "Turn this notification off", unsubscribe_url(@user.unsubscribe_hash, subscription: 'comment_created') %>

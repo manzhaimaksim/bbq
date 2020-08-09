@@ -59,15 +59,11 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, photo)
-    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
-    # удаляем из рассылки емаил автора фото
-    all_emails.delete(photo.user.email)
-    # По адресам из этого массива делаем рассылку
-    # Как и в подписках, берём EventMailer и его метод photo с параметрами
-    # И отсылаем в том же потоке
-    all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
+    all_users = (event.subscriptions.map(&:user) + [event.user]).uniq
+    all_users.delete(photo.user)
+
+    all_users.each do |user|
+      EventMailer.photo(event, photo, user).deliver_now unless user.nil?
     end
   end
 end

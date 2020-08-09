@@ -12,3 +12,5 @@
 
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>
+
+<%= render "shared/unsubscribe_link", subscription_type: "subscription_added" %>

@@ -119,14 +119,19 @@ Rails.application.configure do
   # Делать рассылку писем (при false приложение только имитирует отправку)
   config.action_mailer.perform_deliveries = true
 
-  # Устанавливаем протокол, по которому отправлять (SMTP)
-  ActionMailer::Base.smtp_settings = {
-    port: ENV['MAILGUN_SMTP_PORT'],
-    address: ENV['MAILGUN_SMTP_SERVER'],
-    user_name: ENV['MAILGUN_SMTP_LOGIN'],
-    password: ENV['MAILGUN_SMTP_PASSWORD'],
-    domain: 'barbiequeue.heroku.com',
-    authentication: :plain
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAILGUN_API_KEY'],
+    domain: ENV['MAILGUN_DOMAIN']
   }
-  ActionMailer::Base.delivery_method = :smtp
+  # # Устанавливаем протокол, по которому отправлять (SMTP)
+  # ActionMailer::Base.smtp_settings = {
+  #   port: ENV['MAILGUN_SMTP_PORT'],
+  #   address: ENV['MAILGUN_SMTP_SERVER'],
+  #   user_name: ENV['MAILGUN_SMTP_LOGIN'],
+  #   password: ENV['MAILGUN_SMTP_PASSWORD'],
+  #   domain: 'barbiequeue.herokuapp.com',
+  #   authentication: :plain
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
 end

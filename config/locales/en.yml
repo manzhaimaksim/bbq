@@ -97,8 +97,21 @@ en:
       event: 'Event'
       datetime: 'Datetime'
       owner: 'Owner'
+    photo:
+      title: "New photo"
+      author: "Author"
+      event: "Event"
+      datetime: "Datetime"
+      owner: "Owner"
+      photo: "Photo"
   event:
     pincode: "Pincode for access"
   layouts:
     application:
       menu: "Menu"
+  photos:
+    photo:
+      destroy_confirm: "Are you sure?"
+      added: "Added"
+      delete_photo: "Delete photo"
+  datetime_validation: "The event must take place in the future and no earlier than 1 hour later"

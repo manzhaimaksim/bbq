@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_create :add_unsubscribe_hash
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   has_many :events, dependent: :destroy
@@ -19,4 +21,8 @@ class User < ApplicationRecord
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
+
+   def add_unsubscribe_hash
+     self.unsubscribe_hash = SecureRandom.hex
+   end
 end

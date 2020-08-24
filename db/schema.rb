@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_174243) do
+ActiveRecord::Schema.define(version: 2020_08_09_141223) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -71,6 +71,10 @@ ActiveRecord::Schema.define(version: 2020_07_10_174243) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "avatar"
+    t.string "unsubscribe_hash"
+    t.boolean "notify_when_comment_created"
+    t.boolean "notify_when_subscription_added"
+    t.boolean "notify_when_photo_added"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

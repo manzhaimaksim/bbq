@@ -9,3 +9,5 @@ Email: <%=  @email %>
 Событие: <%= @event.title %>
 Состоится: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>
+
+<%= link_to "Turn this notification off", unsubscribe_url(@event.user.unsubscribe_hash, subscription: 'subscription_added') %>

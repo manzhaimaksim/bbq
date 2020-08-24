@@ -97,8 +97,21 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+    photo:
+      title: "Новое фото"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Дата и время"
+      owner: "Организатор"
+      photo: "Фото"
   event:
     pincode: "Пинкод доступа"
   layouts:
     application:
       menu: "Меню"
+  photos:
+    photo:
+      destroy_confirm: "Вы действительно желаете удалить фото?"
+      added: "Добавил"
+      delete_photo: "Удалить фото"
+  datetime_validation: "Событие должно пройти в будущем и не ранее чем через 1 час"

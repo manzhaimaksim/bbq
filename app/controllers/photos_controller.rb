@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
 
     if @new_photo.save
       # уведомляем всех подписчиков о новой фотографии
-      # notify_subscribers(@event, @new_photo)
+      notify_subscribers(@event, @new_photo)
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    message = {notice: I18n.t('controllers.photos.destroyed')}
+    message = { notice: I18n.t('controllers.photos.destroyed') }
 
     # Проверяем, может ли пользователь удалить фотографию
     # Если может — удаляем
@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
       @photo.destroy
     else
       # Если нет — сообщаем ему
-      message = {alert: I18n.t('controllers.photos.error')}
+      message = { alert: I18n.t('controllers.photos.error') }
     end
 
     # В любом случае редиректим юзера на событие
@@ -59,15 +59,11 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, photo)
-    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
-    # удаляем из рассылки емаил автора фото
-    all_emails.delete(photo.user.email)
-    # По адресам из этого массива делаем рассылку
-    # Как и в подписках, берём EventMailer и его метод photo с параметрами
-    # И отсылаем в том же потоке
-    all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
+    all_users = (event.subscriptions.map(&:user) + [event.user]).uniq
+    all_users.delete(photo.user)
+
+    all_users.each do |user|
+      EventMailer.photo(event, photo, user).deliver_now unless user.nil?
     end
   end
 end

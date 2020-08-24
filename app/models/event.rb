@@ -10,7 +10,8 @@ class Event < ApplicationRecord
                     length: { maximum: 255 }
 
   validates :address, presence: true
-  validates :datetime, presence: true
+  validates :datetime,  presence: true,
+                        inclusion: { in: (Time.now + 1.hour).., message: I18n.t('datetime_validation') }
 
   def visitors
     (subscribers + [user]).uniq

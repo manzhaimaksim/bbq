@@ -77,6 +77,10 @@ ru:
               user_owner_event: 'Вы не можете подписаться, если вы организатор события'
             user_email:
               user_owner_email: 'Вы не можете использовать email зарегистрованого пользователя'
+        event:
+          attributes:
+            datetime:
+              inclusion: "Событие должно пройти в будущем и не ранее чем через 1 час"
   models:
     photo: 'Фотография'
     attributes:
@@ -114,4 +118,3 @@ ru:
       destroy_confirm: "Вы действительно желаете удалить фото?"
       added: "Добавил"
       delete_photo: "Удалить фото"
-  datetime_validation: "Событие должно пройти в будущем и не ранее чем через 1 час"

@@ -77,6 +77,10 @@ en:
               user_owner_event: 'You cannot subscribe if you are an event organizer'
             user_email:
               user_owner_email: 'You cannot use the email of a registered user'
+        event:
+          attributes:
+            datetime:
+              inclusion: "The event must take place in the future and no earlier than 1 hour later"
   models:
     photo: 'Photo'
     attributes:
@@ -114,4 +118,3 @@ en:
       destroy_confirm: "Are you sure?"
       added: "Added"
       delete_photo: "Delete photo"
-  datetime_validation: "The event must take place in the future and no earlier than 1 hour later"

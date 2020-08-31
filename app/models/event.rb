@@ -11,7 +11,7 @@ class Event < ApplicationRecord
 
   validates :address, presence: true
   validates :datetime,  presence: true,
-                        inclusion: { in: (Time.now + 1.hour).., message: I18n.t('datetime_validation') }
+                        inclusion: { in: (Time.now + 1.hour).. }
 
   def visitors
     (subscribers + [user]).uniq

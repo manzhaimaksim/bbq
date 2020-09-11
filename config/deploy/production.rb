@@ -59,3 +59,5 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server 'barbiequeue.site', user: 'deploy', roles: %w{app db web}

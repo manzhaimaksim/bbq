@@ -110,16 +110,12 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  # Базовый URL сайта для правильных ссылок в письмах
-  config.action_mailer.default_url_options = { host: 'barbiequeue.herokuapp.com' }
+  # test capistrano
 
-  # Ошибки рассылки юзеру не показываем
-  config.action_mailer.raise_delivery_errors = false
-
-  # Делать рассылку писем (при false приложение только имитирует отправку)
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'barbiequeue.site' }
 
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name => ENV['MAILTRAP_USERNAME'],
     :password => ENV['MAILTRAP_PASSWORD'],

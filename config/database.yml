@@ -21,7 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
+  <<: *default
   adapter: postgresql
-  user: EVN['POSTGRESQL_USER']
-  password: ENV['POSTGRESQL_PASSWORD']
-  database: ENV['POSTGRESQL_DATABASE']
+  host: localhost
+  port: 5432
+  database: ENV['DIGITAL_OCEAN_PROD']
+  user: ENV['DIGITAL_OCEAN_USER']
+  password: ENV['DIGITAL_OCEAN_PASSWORD']

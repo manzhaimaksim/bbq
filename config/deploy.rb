@@ -8,14 +8,14 @@ append :linked_files, 'config/application.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 after 'deploy:updated', 'webpacker:precompile'
 
-set :default_env, {
-    path: '~/.rbenv/plugins/ruby-build/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH',
-    rbenv_root: '~/.rbenv/bin/rbenv'
-}
-
-set :rbenv_roles, :all
-set :rbenv_ruby, '2.6.6'
-set :rbenv_ruby_dir, '~/.rbenv/versions/2.6.6'
+# set :default_env, {
+#     path: '~/.rbenv/plugins/ruby-build/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH',
+#     rbenv_root: '~/.rbenv/bin/rbenv'
+# }
+#
+# set :rbenv_roles, :all
+# set :rbenv_ruby, '2.6.6'
+# set :rbenv_ruby_dir, '~/.rbenv/versions/2.6.6'
 # set :rbenv_custom_path, '~/.local/rbenv'
 
 # Default branch is :master

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'capistrano-webpacker-precompile', require: false
 end
 
 group :production do

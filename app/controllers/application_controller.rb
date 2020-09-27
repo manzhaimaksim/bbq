@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+
   # Настройка для работы Девайза, когда юзер правит профиль
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_user_can_edit?

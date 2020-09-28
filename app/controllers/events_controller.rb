@@ -3,13 +3,14 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :password_guard!, only: [:show]
 
-  after_action :verify_authorized, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
 
   def index
     @events = Event.all
   end
 
   def show
+    authorize @event
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     # Болванка модели для формы добавления фотографии
@@ -44,7 +45,6 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    authorize @event
     @event.destroy
     redirect_to events_url, notice: t('.success')
   end

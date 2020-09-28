@@ -118,3 +118,5 @@ ru:
       destroy_confirm: "Вы действительно желаете удалить фото?"
       added: "Добавил"
       delete_photo: "Удалить фото"
+  pundit:
+    not_authorized: "Это вам не позволено!"

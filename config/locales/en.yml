@@ -118,3 +118,5 @@ en:
       destroy_confirm: "Are you sure?"
       added: "Added"
       delete_photo: "Delete photo"
+  pundit:
+    not_authorized: "This is not allowed for you!"

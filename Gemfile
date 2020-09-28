@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-webpacker-precompile', require: false
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 group :production do

@@ -23,6 +23,7 @@ gem 'webpacker', github: 'rails/webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
   gem 'sqlite3', '~> 1.4'
   gem 'capistrano'
   gem 'capistrano-rails'

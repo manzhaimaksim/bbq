@@ -45,6 +45,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authorize @event
     @event.destroy
     redirect_to events_url, notice: t('.success')
   end

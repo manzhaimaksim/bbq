@@ -1,14 +1,15 @@
 class EventPolicy < ApplicationPolicy
   def edit?
-    user.present? && user == event.user
+    update?
   end
 
   def update?
-    user.present? && user == event.user
+    # user.present? && user == event.user
+    user_is_owner?(@record)
   end
 
   def destroy?
-    user.present? && user == event.user
+    update?
   end
 
   def show?
@@ -23,7 +24,7 @@ class EventPolicy < ApplicationPolicy
 
   private
 
-  def event
-    record
+  def user_is_owner?(event)
+    user.present? && (event.try(:user) == user)
   end
 end

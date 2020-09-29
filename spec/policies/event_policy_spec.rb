@@ -1,28 +1,30 @@
 require 'rails_helper'
 
-RSpec.describe EventPolicy, type: :policy do
-  let(:user) { FactoryBot.create(:user, email: 'bbb@bb.bb') }
-  let(:event) { FactoryBot.create(:event) }
+RSpec.describe EventPolicy do
+  let(:user) { FactoryBot.create(:user) }
+  let(:event) {FactoryBot.create(:event)}
 
   subject { EventPolicy }
 
-  permissions :edit? do
-    it { is_expected.to permit(user, event) }
-    it { is_expected.not_to permit(nil, event) }
+  context 'user is not owner' do
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(user, event) }
+    end
   end
 
-  permissions :update? do
-    it { is_expected.to permit(user, event) }
-    it { is_expected.not_to permit(nil, event) }
+  context 'user is owner' do
+    let(:event) { Event.create(title: 'bbb party 2', address: 'bbb address', datetime: Time.now, user: user) }
+    permissions :show?, :edit?, :update?, :destroy? do
+      it { is_expected.to permit(user, event) }
+    end
   end
 
-  permissions :destroy? do
-    it { is_expected.to permit(user, event) }
-    it { is_expected.not_to permit(nil, event) }
-  end
-
-  permissions :show? do
-    it { is_expected.to permit(user, event) }
-    it { is_expected.to permit(nil, event) }
+  context 'user is anonymous user' do
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(nil, event) }
+    end
+    permissions :show? do
+      it { is_expected.to permit(nil, event) }
+    end
   end
 end

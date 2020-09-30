@@ -1,19 +1,26 @@
 class EventPolicy < ApplicationPolicy
+  def index?
+    true
+  end
+
+  def show?
+    true
+  end
+
+  def create?
+    user.present? || user_is_owner?(@record)
+  end
+
   def edit?
     update?
   end
 
   def update?
-    # user.present? && user == event.user
     user_is_owner?(@record)
   end
 
   def destroy?
     update?
-  end
-
-  def show?
-    true
   end
 
   class Scope < Scope

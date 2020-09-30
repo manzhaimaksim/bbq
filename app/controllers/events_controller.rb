@@ -4,9 +4,10 @@ class EventsController < ApplicationController
   before_action :password_guard!, only: [:show]
 
   after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
+  after_action :verify_policy_scoped, only: [:index]
 
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
   def show
@@ -33,6 +34,7 @@ class EventsController < ApplicationController
     else
       render :new
     end
+    authorize @event
   end
 
   def update

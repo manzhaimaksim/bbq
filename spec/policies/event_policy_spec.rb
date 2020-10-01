@@ -14,7 +14,7 @@ RSpec.describe EventPolicy do
 
   context 'user is owner' do
     let(:event) { Event.create(title: 'bbb party 2', address: 'bbb address', datetime: Time.now, user: user) }
-    permissions :show?, :edit?, :update?, :destroy? do
+    permissions :index?, :show?, :edit?, :update?, :destroy? do
       it { is_expected.to permit(user, event) }
     end
   end
@@ -23,8 +23,15 @@ RSpec.describe EventPolicy do
     permissions :edit?, :update?, :destroy? do
       it { is_expected.not_to permit(nil, event) }
     end
-    permissions :show? do
+    permissions  :index?, :show? do
       it { is_expected.to permit(nil, event) }
+    end
+  end
+
+  context 'user creates an event' do
+    permissions :create? do
+      it { is_expected.to permit(user, event)}
+      it { is_expected.not_to permit(nil, event) }
     end
   end
 end

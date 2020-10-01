@@ -29,12 +29,12 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
 
+    authorize @event
     if @event.save
       redirect_to @event, notice: t('.success')
     else
       render :new
     end
-    authorize @event
   end
 
   def update

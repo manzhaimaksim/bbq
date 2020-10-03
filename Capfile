@@ -36,6 +36,7 @@ require 'capistrano/rbenv' # или RVM
 require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano-resque'
+require 'capistrano/yarn'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.6'

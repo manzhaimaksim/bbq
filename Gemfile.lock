@@ -102,6 +102,8 @@ GEM
       resque-scheduler
     capistrano-webpacker-precompile (0.2)
       capistrano (~> 3.1)
+    capistrano-yarn (2.0.2)
+      capistrano (~> 3.0)
     carrierwave (2.1.0)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -357,6 +359,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-resque
   capistrano-webpacker-precompile
+  capistrano-yarn
   carrierwave
   devise
   devise-bootstrap-views

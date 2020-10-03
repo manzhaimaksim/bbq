@@ -48,3 +48,4 @@ yarn-debug.log*
 /config/application.yml
 /config/secrets.yml
 /config/database.yml
+dump.rdb

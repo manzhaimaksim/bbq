@@ -8,7 +8,7 @@ append :linked_files, 'config/application.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 # set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :assets_roles, []
-after 'deploy:restart', 'resque:restart'
+# after 'deploy:restart', 'resque:restart'
 
 
 # set :default_env, {

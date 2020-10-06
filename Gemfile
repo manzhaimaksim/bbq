@@ -32,6 +32,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-resque', require: false
+  gem 'capistrano-webpacker-precompile', require: false
   gem 'capistrano-yarn'
   gem 'letter_opener'
   gem 'rspec-rails', '~> 4.0.1'

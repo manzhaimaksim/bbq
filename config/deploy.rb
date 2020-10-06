@@ -9,7 +9,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 # set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :assets_roles, []
 # after 'deploy:restart', 'resque:restart'
-
+after 'deploy:updated', 'webpacker:precompile'
 
 # set :default_env, {
 #     path: '~/.rbenv/plugins/ruby-build/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH',

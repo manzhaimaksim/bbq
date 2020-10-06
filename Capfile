@@ -36,6 +36,7 @@ require 'capistrano/rbenv' # или RVM
 require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano-resque'
+require "capistrano/webpacker/precompile"
 require 'capistrano/yarn'
 
 set :rbenv_type, :user

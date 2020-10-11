@@ -7,7 +7,7 @@ set :branch, "lesson70/facebook_oauth"
 set :deploy_to, '/home/deploy/apps/bbq'
 append :linked_files, 'config/application.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
-# after 'deploy:updated', 'webpacker:precompile'
+after 'deploy:updated', 'webpacker:precompile'
 
 # set :default_env, {
 #     path: '~/.rbenv/plugins/ruby-build/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH',

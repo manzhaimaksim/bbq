@@ -2,7 +2,7 @@ class User < ApplicationRecord
   before_create :add_unsubscribe_hash
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable,
-         omniauth_providers: [:facebook]
+         omniauth_providers: [:facebook, :vkontakte]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -40,6 +40,27 @@ class User < ApplicationRecord
       # Если создаём новую запись, прописываем email, имя и пароль
       user.name = access_token.info.name
       user.email = email
+      user.password = Devise.friendly_token.first(16)
+    end
+  end
+
+  def self.find_for_vkontakte_oauth(access_token)
+    email = access_token.info.email
+    user = where(email: email).first
+    # Возвращаем, если нашёлся
+    return user if user.present?
+
+    # Если не нашёлся, достаём провайдера, айдишник и урл
+    provider = access_token.provider
+    id = access_token.extra.raw_info.id
+    url = "https://vk.com/#{id}"
+
+    # Теперь ищем в базе запись по провайдеру и урлу
+    # Если есть, то вернётся, если нет, то будет создана новая
+    where(url: url, provider: provider).first_or_create! do |user|
+      # Если создаём новую запись, прописываем email, имя и пароль
+      user.name = access_token.info.first_name
+      user.email = access_token.info.email
       user.password = Devise.friendly_token.first(16)
     end
   end

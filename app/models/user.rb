@@ -38,7 +38,7 @@ class User < ApplicationRecord
     # Если есть, то вернётся, если нет, то будет создана новая
     where(url: url, provider: provider).first_or_create! do |user|
       # Если создаём новую запись, прописываем email, имя и пароль
-      user.name = name
+      user.name = auth.info.name
       user.email = email
       user.password = Devise.friendly_token.first(16)
     end

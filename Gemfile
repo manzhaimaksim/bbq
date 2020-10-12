@@ -13,9 +13,13 @@ gem 'figaro'
 gem 'fog-aws'
 gem 'listen'
 gem 'mailgun-ruby', '~>1.1.6'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
+gem 'omniauth-facebook'
 gem 'pundit'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 gem 'rails-i18n'
+gem 'resque'
 gem 'rmagick'
 gem 'therubyracer'
 gem 'uglifier'
@@ -31,6 +35,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-webpacker-precompile', require: false
+  gem 'letter_opener'
   gem 'rspec-rails', '~> 4.0.1'
 end
 

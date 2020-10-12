@@ -3,6 +3,7 @@ lock "~> 3.14.1"
 
 set :application, 'bbq'
 set :repo_url, 'git@github.com:manzhaimaksim/bbq.git'
+set :branch, 'lesson70/oauth_login'
 set :deploy_to, '/home/deploy/apps/bbq'
 append :linked_files, 'config/application.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'

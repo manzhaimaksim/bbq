@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_buname_prefix = "bbq_#{Rails.env}"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -61,7 +63,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.asset_host = 'http://localhost:3000'
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
 
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
@@ -71,4 +73,6 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
+
+  config.hosts << "lvh.me"
 end

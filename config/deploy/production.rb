@@ -60,4 +60,8 @@
 #     # password: "please use keys"
 #   }
 
-server '167.172.33.0', user: 'deploy', roles: %w[app db web]
+server '167.172.33.0', user: 'deploy', roles: %w[app db web resque_worker]
+
+set :resque_environment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
+

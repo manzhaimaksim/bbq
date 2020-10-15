@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     # Дёргаем метод модели, который найдёт пользователя
-    @user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
+    @user = User.find_for_omniauth_provider(request.env['omniauth.auth'])
 
     # Если юзер есть, то логиним и редиректим на его страницу
     if @user.persisted?
@@ -20,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def vkontakte
-    @user = User.find_for_vkontakte_oauth(request.env['omniauth.auth'])
+    @user = User.find_for_omniauth_provider(request.env['omniauth.auth'])
 
     # Если юзер есть, то логиним и редиректим на его страницу
     if @user.persisted?

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: '460a60df6d-78713b@inbox.mailtrap.io'
+  default from: 'postmaster@barbiequeue.site'
   layout 'mailer'
 end

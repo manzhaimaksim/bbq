@@ -117,13 +117,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'afternoon-fortress-30762.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :api_key        => ENV['SENDGRID_API_KEY'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+      address: 'smtp.mailgun.org',
+      port: '587',
+      authentication: :plain,
+      user_name: ENV['MAILGUN_USERNAME'],
+      password: ENV['MAILGUN_PASSWORD'],
+      domain: 'heroku.com',
+      enable_starttls_auto: true
   }
 end

@@ -112,16 +112,17 @@ Rails.application.configure do
 
   # test capistrano
 
-  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: 'barbiequeue.site' }
+  config.action_mailer.default_url_options = { host: 'bbbq.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    :user_name => ENV['MAILTRAP_USERNAME'],
-    :password => ENV['MAILTRAP_PASSWORD'],
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
   }
 end

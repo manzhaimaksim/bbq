@@ -15,7 +15,7 @@ class SubscriptionsController < ApplicationController
       EventMailer.subscription(@event, @new_subscription).deliver_now
 
       # Если сохранилась, редиректим на страницу самого события
-      redirect_to 'events/show', notice: I18n.t('controllers.subscriptions.created')
+      redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
       # если ошибки — рендерим шаблон события
       render 'events/show', alert: I18n.t('controllers.subscriptions.error')

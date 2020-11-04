@@ -26,6 +26,9 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "babel": {
     "presets": ["./node_modules/@rails/webpacker/package/babel/preset.js"]
   },

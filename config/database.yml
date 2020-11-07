@@ -25,6 +25,6 @@ production:
   adapter: postgresql
   host: localhost
   port: 5432
-  database: ENV['DIGITAL_OCEAN_PROD']
-  user: ENV['DIGITAL_OCEAN_USER']
-  password: ENV['DIGITAL_OCEAN_PASSWORD']
+  database: <%= ENV['DIGITAL_OCEAN_PROD'] %>
+  user: <%= ENV['DIGITAL_OCEAN_USER'] %>
+  password: <%= ENV['DIGITAL_OCEAN_PASSWORD'] %>

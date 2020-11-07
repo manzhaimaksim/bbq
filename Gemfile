@@ -31,6 +31,7 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+  gem 'capistrano-puma'
   gem 'capistrano-webpacker-precompile', require: false
   gem 'rspec-rails', '~> 4.0.1'
 end

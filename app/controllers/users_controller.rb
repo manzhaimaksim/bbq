@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -23,18 +22,17 @@ class UsersController < ApplicationController
     user = User.find_by_unsubscribe_hash(params[:unsubscribe_hash])
 
     case params[:subscription]
-      when "comment_created"
-        @reason = "new comments"
-        user.update(notify_when_comment_created: false)
-      when "subscription_added"
-        @reason = "new subscriptions"
-        user.update(notify_when_subscription_added: false)
-      when "photo_added"
-        @reason = "new photos"
-        user.update(notify_when_photo_added: false)
+    when 'comment_created'
+      @reason = 'new comments'
+      user.update(notify_when_comment_created: false)
+    when 'subscription_added'
+      @reason = 'new subscriptions'
+      user.update(notify_when_subscription_added: false)
+    when 'photo_added'
+      @reason = 'new photos'
+      user.update(notify_when_photo_added: false)
     end
   end
-
 
   private
 

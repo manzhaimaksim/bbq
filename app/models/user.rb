@@ -51,7 +51,7 @@ class User < ApplicationRecord
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
 
-   def add_unsubscribe_hash
-     self.unsubscribe_hash = SecureRandom.hex
-   end
+  def add_unsubscribe_hash
+    self.unsubscribe_hash = SecureRandom.hex
+  end
 end
